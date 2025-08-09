@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-        
         body {
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
         }
-        
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
@@ -23,78 +21,67 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
         
         .animated-bg {
             animation: gradient 15s ease infinite;
             background-size: 400% 400%;
-        }
         
         @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
     <!-- Header/Navbar -->
-    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg" role="banner">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <i class="fas fa-industry text-2xl text-yellow-500 mr-2"></i>
+                <i class="fas fa-industry text-2xl text-yellow-500 mr-2" aria-hidden="true"></i>
                 <h1 class="text-2xl font-bold">
                     <span class="text-yellow-500">METALÚRGICA</span> SIMÕES
                 </h1>
             </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#inicio" class="hover:text-yellow-500 transition">Início</a>
-                <a href="#servicos" class="hover:text-yellow-500 transition">Serviços</a>
-                <a href="#sobre" class="hover:text-yellow-500 transition">Sobre Nós</a>
-                <a href="#portfolio" class="hover:text-yellow-500 transition">Portfólio</a>
-                <a href="#contato" class="hover:text-yellow-500 transition">Contato</a>
-                <a href="#avaliacoes" class="hover:text-yellow-500 transition">Avaliações</a>
+            <nav class="hidden md:flex space-x-8" aria-label="Navegação principal">
+                <a href="#inicio" class="hover:text-yellow-500 transition" aria-label="Ir para Início">Início</a>
+                <a href="#servicos" class="hover:text-yellow-500 transition" aria-label="Ir para Serviços">Serviços</a>
+                <a href="#sobre" class="hover:text-yellow-500 transition" aria-label="Ir para Sobre Nós">Sobre Nós</a>
+                <a href="#portfolio" class="hover:text-yellow-500 transition" aria-label="Ir para Portfólio">Portfólio</a>
+                <a href="#contato" class="hover:text-yellow-500 transition" aria-label="Ir para Contato">Contato</a>
+                <a href="#avaliacoes" class="hover:text-yellow-500 transition" aria-label="Ir para Avaliações">Avaliações</a>
             </nav>
-            
-            <button class="md:hidden text-2xl" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
+            <button class="md:hidden text-2xl" id="mobile-menu-button" aria-label="Abrir menu mobile" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
-        
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-gray-800" id="mobile-menu">
+        <div class="md:hidden hidden bg-gray-800" id="mobile-menu" aria-label="Menu mobile">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#inicio" class="hover:text-yellow-500 transition py-2 border-b border-gray-700">Início</a>
-                <a href="#servicos" class="hover:text-yellow-500 transition py-2 border-b border-gray-700">Serviços</a>
-                <a href="#sobre" class="hover:text-yellow-500 transition py-2 border-b border-gray-700">Sobre Nós</a>
-                <a href="#portfolio" class="hover:text-yellow-500 transition py-2 border-b border-gray-700">Portfólio</a>
-                <a href="#contato" class="hover:text-yellow-500 transition py-2 border-b border-gray-700">Contato</a>
-                <a href="#avaliacoes" class="hover:text-yellow-500 transition py-2">Avaliações</a>
+                <a href="#inicio" class="hover:text-yellow-500 transition py-2 border-b border-gray-700" aria-label="Ir para Início">Início</a>
+                <a href="#servicos" class="hover:text-yellow-500 transition py-2 border-b border-gray-700" aria-label="Ir para Serviços">Serviços</a>
+                <a href="#sobre" class="hover:text-yellow-500 transition py-2 border-b border-gray-700" aria-label="Ir para Sobre Nós">Sobre Nós</a>
+                <a href="#portfolio" class="hover:text-yellow-500 transition py-2 border-b border-gray-700" aria-label="Ir para Portfólio">Portfólio</a>
+                <a href="#contato" class="hover:text-yellow-500 transition py-2 border-b border-gray-700" aria-label="Ir para Contato">Contato</a>
+                <a href="#avaliacoes" class="hover:text-yellow-500 transition py-2" aria-label="Ir para Avaliações">Avaliações</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero min-h-screen flex items-center justify-center text-white">
+    <section id="inicio" class="hero min-h-screen flex items-center justify-center text-white" aria-label="Seção principal">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
                 SOLUÇÕES EM <span class="text-yellow-500">METALURGIA</span> DE ALTA QUALIDADE
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Mais de 30 anos transformando ideias em realidade com excelência em metalurgia e usinagem.
+                Especialistas em soluções inovadoras para indústria, oferecendo qualidade, precisão e confiança em cada projeto metalúrgico.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contato" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                <a href="#contato" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Fale conosco">
                     FALE CONOSCO
                 </a>
-                <a href="#servicos" class="bg-transparent hover:bg-gray-800 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                <a href="#servicos" class="bg-transparent hover:bg-gray-800 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Ver nossos serviços">
                     NOSSOS SERVIÇOS
                 </a>
             </div>
@@ -102,7 +89,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="py-16 bg-gray-100">
+    <section id="servicos" class="py-16 bg-gray-100" aria-label="Seção de serviços">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSOS <span class="text-yellow-500">SERVIÇOS</span></h2>
@@ -111,36 +98,34 @@
                     Oferecemos uma gama completa de serviços metalúrgicos para atender às necessidades industriais mais exigentes.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 5 -->
-                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500" role="region" aria-label="Solda Especializada">
                     <div class="h-48 bg-gray-300 flex items-center justify-center">
-                        <i class="fas fa-bolt text-6xl text-yellow-500"></i>
+                        <i class="fas fa-bolt text-6xl text-yellow-500" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Solda Especializada</h3>
                         <p class="text-gray-600 mb-4">
                             Técnicas avançadas de soldagem executadas por profissionais altamente qualificados.
                         </p>
-                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-600 transition">
-                            Saiba mais <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-600 transition" aria-label="Saiba mais sobre Solda Especializada">
+                            Saiba mais <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                
                 <!-- Service 6 -->
-                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500">
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500" role="region" aria-label="Projetos Personalizados">
                     <div class="h-48 bg-gray-300 flex items-center justify-center">
-                        <i class="fas fa-tools text-6xl text-yellow-500"></i>
+                        <i class="fas fa-tools text-6xl text-yellow-500" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3">Projetos Personalizados</h3>
                         <p class="text-gray-600 mb-4">
                             Desenvolvimento de soluções sob medida para atender às necessidades específicas de cada cliente.
                         </p>
-                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-600 transition">
-                            Saiba mais <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-600 transition" aria-label="Saiba mais sobre Projetos Personalizados">
+                            Saiba mais <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -149,27 +134,26 @@
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-16 bg-white">
+    <section id="sobre" class="py-16 bg-white " aria-label="Sobre a empresa">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+            <div class="flex flex-col lg:flex-row items-center"></div>
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12"></div>
                     <img src="https://images.unsplash.com/photo-1581093057306-d307593c953f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Metalúrgica Simões" 
+                         alt="Foto da Metalúrgica Simões" 
                          class="rounded-lg shadow-xl w-full h-auto">
                 </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">SOBRE A <span class="text-yellow-500">METALÚRGICA SIMÕES</span></h2>
+                <div class="lg:w-1/2 px-4"> <!-- Adiciona margem interna à esquerda e direita -->
+                    <h2 class="text-3xl md:text-4xl font-bold mb-10">SOBRE A <span class="text-yellow-500">METALÚRGICA SIMÕES</span></h2>
                     <div class="w-24 h-1 bg-yellow-500 mb-6"></div>
                     <p class="text-gray-600 mb-4">
-                        Fundada em 1990, a Metalúrgica Simões se consolidou como referência no setor metalúrgico, oferecendo soluções personalizadas e de alta qualidade para diversos segmentos industriais.
+                        Desde sua fundação, a Metalúrgica Simões atua com foco em inovação e excelência, desenvolvendo projetos sob medida e entregando resultados que superam as expectativas dos clientes em todo o Brasil.
                     </p>
                     <p class="text-gray-600 mb-6">
                         Com uma equipe altamente qualificada e equipamentos de última geração, garantimos precisão, durabilidade e eficiência em todos os nossos projetos.
                     </p>
-                    
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-yellow-500 text-2xl mr-3 mt-1"></i>
+                        <div class="flex items-start"></div>
+                            <i class="fas fa-check-circle text-yellow-500 text-2xl mr-3 mt-1" aria-hidden="true"></i>
                             <div>
                                 <h4 class="font-bold text-lg mb-1">Missão</h4>
                                 <p class="text-gray-600">
@@ -178,7 +162,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-eye text-yellow-500 text-2xl mr-3 mt-1"></i>
+                            <i class="fas fa-eye text-yellow-500 text-2xl mr-3 mt-1" aria-hidden="true"></i>
                             <div>
                                 <h4 class="font-bold text-lg mb-1">Visão</h4>
                                 <p class="text-gray-600">
@@ -187,7 +171,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-heart text-yellow-500 text-2xl mr-3 mt-1"></i>
+                            <i class="fas fa-heart text-yellow-500 text-2xl mr-3 mt-1" aria-hidden="true"></i>
                             <div>
                                 <h4 class="font-bold text-lg mb-1">Valores</h4>
                                 <p class="text-gray-600">
@@ -196,7 +180,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-award text-yellow-500 text-2xl mr-3 mt-1"></i>
+                            <i class="fas fa-award text-yellow-500 text-2xl mr-3 mt-1" aria-hidden="true"></i>
                             <div>
                                 <h4 class="font-bold text-lg mb-1">Certificações</h4>
                                 <p class="text-gray-600">
@@ -205,8 +189,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="#contato" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    <a href="#contato" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Entre em contato">
                         ENTRE EM CONTATO
                     </a>
                 </div>
@@ -215,7 +198,7 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-gray-100">
+    <section id="portfolio" class="py-16 bg-gray-100" aria-label="Portfólio de projetos">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSO <span class="text-yellow-500">PORTFÓLIO</span></h2>
@@ -224,53 +207,49 @@
                     Conheça alguns dos nossos trabalhos realizados para clientes de diversos segmentos industriais.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg" role="region" aria-label="Estruturas Metálicas"></div>
                     <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Projeto 1" 
+                         alt="Estruturas Metálicas para indústria automotiva" 
                          class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-4">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-4"></div>
                         <h3 class="text-white text-xl font-bold mb-2">Estruturas Metálicas</h3>
                         <p class="text-gray-300 text-center mb-4">Fabricação de estruturas para indústria automotiva</p>
-                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition">
-                            Ver detalhes <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition" aria-label="Ver detalhes do projeto Estruturas Metálicas">
+                            Ver detalhes <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                
                 <!-- Project 2 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg" role="region" aria-label="Peças Usinadas"></div>
                     <img src="https://images.unsplash.com/photo-1581093057306-d307593c953f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Projeto 2" 
+                         alt="Peças Usinadas para setor aeronáutico" 
                          class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-4">
                         <h3 class="text-white text-xl font-bold mb-2">Peças Usinadas</h3>
                         <p class="text-gray-300 text-center mb-4">Usinagem CNC para setor aeronáutico</p>
-                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition">
-                            Ver detalhes <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition" aria-label="Ver detalhes do projeto Peças Usinadas">
+                            Ver detalhes <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                
                 <!-- Project 3 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg" role="region" aria-label="Sistema de Tubulação"></div>
                     <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Projeto 3" 
+                         alt="Sistema de Tubulação para indústria petroquímica" 
                          class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-4">
                         <h3 class="text-white text-xl font-bold mb-2">Sistema de Tubulação</h3>
                         <p class="text-gray-300 text-center mb-4">Projeto completo para indústria petroquímica</p>
-                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition">
-                            Ver detalhes <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="#" class="text-yellow-500 font-semibold hover:text-yellow-400 transition" aria-label="Ver detalhes do projeto Sistema de Tubulação">
+                            Ver detalhes <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            <div class="text-center mt-12"></div>
+                <a href="#" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Ver mais projetos">
                     VER MAIS PROJETOS
                 </a>
             </div>
@@ -278,145 +257,68 @@
     </section>
 
     <!-- Clients Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white" aria-label="Clientes">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSOS <span class="text-yellow-500">CLIENTE
+            <div class="text-center mb-12"></div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSOS <span class="text-yellow-500">CLIENTES</span></h2>
                 <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">
                     Empresas que confiam em nosso trabalho e expertise em metalurgia.
                 </p>
             </div>
-            
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
                 <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+1" alt="Cliente" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+1" alt="Logo do Cliente 1" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+                </div>
+                <div class="flex justify-center"></div>
+                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+2" alt="Logo do Cliente 2" class="h-16 object-contain grayscale hover:grayscale-0 transition">
                 </div>
                 <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+2" alt="Cliente" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+3" alt="Logo do Cliente 3" class="h-16 object-contain grayscale hover:grayscale-0 transition">
                 </div>
                 <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+3" alt="Cliente" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+4" alt="Logo do Cliente 4" class="h-16 object-contain grayscale hover:grayscale-0 transition">
                 </div>
                 <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+4" alt="Cliente" class="h-16 object-contain grayscale hover:grayscale-0 transition">
-                </div>
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+5" alt="Cliente" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+                    <img src="https://via.placeholder.com/150x80?text=CLIENTE+5" alt="Logo do Cliente 5" class="h-16 object-contain grayscale hover:grayscale-0 transition">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="avaliacoes" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">AVALIAÇÕES DE <span class="text-yellow-500">CLIENTES</span></h2>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Veja o que nossos clientes dizem sobre a qualidade dos nossos serviços.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">João Silva</h4>
-                            <div class="flex text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "Excelente trabalho! A Metalúrgica Simões entregou nosso projeto dentro do prazo e com qualidade superior."
-                    </p>
-                </div>
-                
-                <!-- Review 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Maria Oliveira</h4>
-                            <div class="flex text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "Profissionais altamente qualificados. Recomendo a todos que precisam de serviços metalúrgicos de qualidade."
-                    </p>
-                </div>
-                
-                <!-- Review 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-xl text-gray-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Carlos Souza</h4>
-                            <div class="flex text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "Atendimento excepcional e peças fabricadas com precisão. Já somos clientes há mais de 5 anos."
-                    </p>
-                </div>
-            </div>
-
+    <section id="avaliacoes" class="py-16 bg-gray-100" aria-label="Avaliações de clientes">
+        
             <!-- Review Form -->
-            <div class="mt-16 bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <div class="mt-16 bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto" role="form" aria-label="Formulário de avaliação">
                 <h3 class="text-2xl font-bold mb-6 text-center">DEIXE SUA AVALIAÇÃO</h3>
-                <form class="space-y-4">
+                <form class="space-y-4" aria-label="Formulário de avaliação de cliente">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="review-name" class="block text-gray-700 font-bold mb-2">Nome</label>
-                            <input type="text" id="review-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="text" id="review-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-required="true" aria-label="Nome">
                         </div>
                         <div>
                             <label for="review-email" class="block text-gray-700 font-bold mb-2">E-mail</label>
-                            <input type="email" id="review-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="email" id="review-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-required="true" aria-label="E-mail">
                         </div>
                     </div>
                     <div>
                         <label class="block text-gray-700 font-bold mb-2">Avaliação</label>
-                        <div class="flex space-x-2 mb-2">
-                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="1"></i>
-                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="2"></i>
-                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="3"></i>
-                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="4"></i>
-                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="5"></i>
+                        <div class="flex space-x-2 mb-2" role="radiogroup" aria-label="Avaliação por estrelas"></div>
+                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="1" tabindex="0" role="radio" aria-label="1 estrela" aria-checked="false"></i>
+                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="2" tabindex="0" role="radio" aria-label="2 estrelas" aria-checked="false"></i>
+                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="3" tabindex="0" role="radio" aria-label="3 estrelas" aria-checked="false"></i>
+                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="4" tabindex="0" role="radio" aria-label="4 estrelas" aria-checked="false"></i>
+                            <i class="far fa-star text-2xl text-yellow-500 cursor-pointer hover:text-yellow-600" data-rating="5" tabindex="0" role="radio" aria-label="5 estrelas" aria-checked="false"></i>
                         </div>
                         <input type="hidden" id="rating-value" value="0">
                     </div>
                     <div>
                         <label for="review-comment" class="block text-gray-700 font-bold mb-2">Comentário</label>
-                        <textarea id="review-comment" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                        <textarea id="review-comment" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-label="Comentário"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Enviar avaliação">
                         ENVIAR AVALIAÇÃO
                     </button>
                 </form>
@@ -425,7 +327,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="py-16 bg-gray-100">
+    <section id="contato" class="py-16 bg-gray-100" aria-label="Contato">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">ENTRE EM <span class="text-yellow-500">CONTATO</span></h2>
@@ -434,25 +336,24 @@
                         Temos a solução ideal para sua necessidade. Fale conosco e solicite um orçamento sem compromisso.
                 </p>
             </div>
-            
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="lg:w-1/2">
-                    <form class="bg-white p-8 rounded-lg shadow-lg">
+                    <form class="bg-white p-8 rounded-lg shadow-lg" aria-label="Formulário de contato">
                         <div class="mb-6">
                             <label for="nome" class="block text-gray-700 font-bold mb-2">Nome</label>
-                            <input type="text" id="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="text" id="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-required="true" aria-label="Nome">
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-bold mb-2">E-mail</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-required="true" aria-label="E-mail">
                         </div>
                         <div class="mb-6">
                             <label for="telefone" class="block text-gray-700 font-bold mb-2">Telefone</label>
-                            <input type="tel" id="telefone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <input type="tel" id="telefone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-label="Telefone">
                         </div>
                         <div class="mb-6">
                             <label for="servico" class="block text-gray-700 font-bold mb-2">Serviço de Interesse</label>
-                            <select id="servico" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <select id="servico" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-label="Serviço de Interesse">
                                 <option value="">Selecione um serviço</option>
                                 <option value="solda">Solda Especializada</option>
                                 <option value="projetos">Projetos Personalizados</option>
@@ -461,44 +362,38 @@
                         </div>
                         <div class="mb-6">
                             <label for="mensagem" class="block text-gray-700 font-bold mb-2">Mensagem</label>
-                            <textarea id="mensagem" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                            <textarea id="mensagem" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-label="Mensagem"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" aria-label="Enviar mensagem">
                             ENVIAR MENSAGEM
                         </button>
                     </form>
                 </div>
-                
                 <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full" aria-label="Informações de contato">
                         <h3 class="text-2xl font-bold mb-6">INFORMAÇÕES DE CONTATO</h3>
-                        
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-yellow-500 text-2xl mr-4 mt-1"></i>
+                                <i class="fas fa-map-marker-alt text-yellow-500 text-2xl mr-4 mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="font-bold text-lg mb-1">Endereço</h4>
                                     <p class="text-gray-600">
-                                        Rua Industrial, 1234<br>
-                                        Bairro Industrial<br>
-                                        Cidade/Estado - CEP 12345-678
+                                        Rua das Indústrias, 1234
                                     </p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <i class="fas fa-phone-alt text-yellow-500 text-2xl mr-4 mt-1"></i>
+                                <i class="fas fa-phone-alt text-yellow-500 text-2xl mr-4 mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="font-bold text-lg mb-1">Telefone</h4>
                                     <p class="text-gray-600">
-                                        (11) 1234-5678<br>
-                                        (11) 98765-4321 (WhatsApp)
+                                        (41) 1234-5678<br>
+                                        (41) 98765-4321 (WhatsApp)
                                     </p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <i class="fas fa-envelope text-yellow-500 text-2xl mr-4 mt-1"></i>
+                                <i class="fas fa-envelope text-yellow-500 text-2xl mr-4 mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="font-bold text-lg mb-1">E-mail</h4>
                                     <p class="text-gray-600">
@@ -507,9 +402,8 @@
                                     </p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <i class="fas fa-clock text-yellow-500 text-2xl mr-4 mt-1"></i>
+                                <i class="fas fa-clock text-yellow-500 text-2xl mr-4 mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="font-bold text-lg mb-1">Horário de Funcionamento</h4>
                                     <p class="text-gray-600">
@@ -520,24 +414,23 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="mt-8">
                             <h4 class="font-bold text-lg mb-4">REDES SOCIAIS</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition">
-                                    <i class="fab fa-facebook-f"></i>
+                                <a href="#" class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition" aria-label="Twitter">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="#" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition" aria-label="Instagram">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition">
-                                    <i class="fab fa-youtube"></i>
+                                <a href="#" class="w-10 h-10 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition" aria-label="YouTube">
+                                    <i class="fab fa-youtube" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -548,24 +441,25 @@
     </section>
 
     <!-- Map Section -->
-    <div class="h-96 w-full">
+    <div class="h-96 w-full" aria-label="Mapa de localização"></div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658440635!3d-23.565734367638914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1629839390972!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy"
-                class="filter grayscale hover:grayscale-0 transition duration-500"></iframe>
+                class="filter grayscale hover:grayscale-0 transition duration-500"
+                title="Mapa da localização da Metalúrgica Simões"></iframe>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-industry text-2xl text-yellow-500 mr-2"></i>
-                        <h3 class="text-xl font-bold">
+                    <div class="flex items-center mb-4"></div>
+                        <i class="fas fa-industry text-2xl text-yellow-500 mr-2" aria-hidden="true"></i>
+                        <h3 class="text-xl font-bold"></h3>
                             <span class="text-yellow-500">METALÚRGICA</span> SIMÕES
                         </h3>
                     </div>
@@ -573,54 +467,50 @@
                         Excelência em soluções metalúrgicas desde 1990. Qualidade, precisão e comprometimento em cada projeto.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-yellow-500">LINKS RÁPIDOS</h4>
                     <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Início</a></li>
-                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition">Serviços</a></li>
-                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfólio</a></li>
-                        <li><a href="#contato" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition" aria-label="Ir para Início">Início</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition" aria-label="Ir para Serviços">Serviços</a></li>
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition" aria-label="Ir para Sobre Nós">Sobre Nós</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition" aria-label="Ir para Portfólio">Portfólio</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-white transition" aria-label="Ir para Contato">Contato</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-yellow-500">SERVIÇOS</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Solda Especializada</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Projetos Personalizados</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" aria-label="Solda Especializada">Solda Especializada</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition" aria-label="Projetos Personalizados">Projetos Personalizados</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-yellow-500">NEWSLETTER</h4>
                     <p class="text-gray-400 mb-4">
                         Assine nossa newsletter para receber novidades e promoções.
                     </p>
-                    <form class="flex">
-                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
-                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-4 py-2 rounded-r-lg transition">
-                            <i class="fas fa-paper-plane"></i>
+                    <form class="flex" aria-label="Formulário de newsletter">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full" aria-label="Seu e-mail" aria-required="true">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-4 py-2 rounded-r-lg transition" aria-label="Assinar newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </button>
                     </form>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>
                     &copy; 2023 Metalúrgica Simões. Todos os direitos reservados.
@@ -630,27 +520,25 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5511987654321" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition transform hover:scale-110 z-50">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/5511987654321" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition transform hover:scale-110 z-50" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg hover:bg-gray-900 transition transform hover:scale-110 z-50 opacity-0 invisible">
-        <i class="fas fa-arrow-up"></i>
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg hover:bg-gray-900 transition transform hover:scale-110 z-50 opacity-0 invisible" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <script>
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
         });
-        
         // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
-        
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
@@ -660,54 +548,53 @@
                 backToTopButton.classList.add('opacity-0', 'invisible');
             }
         });
-        
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
                     // Close mobile menu if open
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
                     }
                 }
             });
         });
-        
         // Rating stars functionality
         const stars = document.querySelectorAll('[data-rating]');
         const ratingValue = document.getElementById('rating-value');
-        
         stars.forEach(star => {
             star.addEventListener('click', () => {
                 const rating = star.getAttribute('data-rating');
                 ratingValue.value = rating;
-                
                 stars.forEach((s, index) => {
                     if (index < rating) {
                         s.classList.remove('far');
                         s.classList.add('fas');
+                        s.setAttribute('aria-checked', 'true');
                     } else {
                         s.classList.remove('fas');
                         s.classList.add('far');
+                        s.setAttribute('aria-checked', 'false');
                     }
                 });
             });
+            star.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    star.click();
+                }
+            });
         });
-
         // Review form submission
         const reviewForm = document.querySelector('#avaliacoes form');
         if (reviewForm) {
@@ -722,11 +609,11 @@
                 stars.forEach(star => {
                     star.classList.remove('fas');
                     star.classList.add('far');
+                    star.setAttribute('aria-checked', 'false');
                 });
                 ratingValue.value = '0';
             });
         }
-
         // Contact form submission
         const contactForm = document.querySelector('#contato form');
         if (contactForm) {
@@ -737,5 +624,6 @@
             });
         }
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Parriz2717/metal-rgica-sim-es" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Parriz2717/metal-rgica-sim-es" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p>
+</body>
 </html>
