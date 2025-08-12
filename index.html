@@ -627,3 +627,104 @@
     <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Parriz2717/metal-rgica-sim-es" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p>
 </body>
 </html>
+
+<!-- Adicione melhorias de acessibilidade logo após <body> -->
+<body>
+    <!-- Skip link para navegação por teclado -->
+    <a href="#inicio" class="sr-only focus:not-sr-only bg-yellow-500 text-gray-900 font-bold px-4 py-2 rounded-lg absolute top-2 left-2 z-50" tabindex="0">Ir para conteúdo principal</a>
+    <!-- ...existing code... -->
+     <!-- Melhore o alt das imagens para descrição detalhada -->
+<img src="https://images.unsplash.com/photo-1581093057306-d307593c953f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+     alt="Funcionário da Metalúrgica Simões operando máquina de corte de metal, ambiente industrial iluminado" 
+     class="rounded-lg shadow-xl w-full h-auto">
+<!-- ...existing code... -->
+ <!-- Adicione role="main" na seção principal -->
+<section id="inicio" class="hero min-h-screen flex items-center justify-center text-white" aria-label="Seção principal" role="main" tabindex="-1">
+    <!-- ...existing code... -->
+</section>
+<!-- Adicione feedback acessível para formulários -->
+<div id="form-feedback" aria-live="polite" class="sr-only"></div>
+<!-- ...existing code... -->
+<script>
+    // ...existing code...
+    // Feedback acessível para contato
+    const feedback = document.getElementById('form-feedback');
+    const contactForm = document.querySelector('#contato form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            feedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+            contactForm.reset();
+        });
+    }
+    // ...existing code...
+</script><!-- Adicione feedback acessível para formulários -->
+<div id="form-feedback" aria-live="polite" class="sr-only"></div>
+<!-- ...existing code... -->
+<script>
+    // ...existing code...
+    // Feedback acessível para contato
+    const feedback = document.getElementById('form-feedback');
+    const contactForm = document.querySelector('#contato form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            feedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+            contactForm.reset();
+        });
+    }
+    // ...existing code...
+</script>
+
+<!-- Adicione melhorias para acessibilidade de pessoas surdas e mudas logo após <body> -->
+<body>
+    <!-- Skip link para navegação por teclado -->
+    <a href="#inicio" class="sr-only focus:not-sr-only bg-yellow-500 text-gray-900 font-bold px-4 py-2 rounded-lg absolute top-2 left-2 z-50" tabindex="0">Ir para conteúdo principal</a>
+    <!-- Botão para ativar modo acessível para surdos/mudos -->
+    <button id="acessibilidade-surdos" class="fixed top-2 right-2 bg-blue-600 text-white px-4 py-2 rounded-lg z-50 focus:outline-none focus:ring-2 focus:ring-yellow-500" aria-label="Ativar modo acessível para surdos e mudos">
+        <i class="fas fa-universal-access mr-2" aria-hidden="true"></i>
+        Modo Surdo/Mudo
+    </button>
+    <!-- ...existing code... -->
+     <!-- Adicione legendas e textos alternativos para vídeos e imagens -->
+<!-- Exemplo para imagens importantes -->
+<img src="https://images.unsplash.com/photo-1581093057306-d307593c953f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+     alt="Funcionário da Metalúrgica Simões operando máquina de corte de metal, ambiente industrial iluminado. Imagem ilustrativa para pessoas com deficiência auditiva." 
+     aria-describedby="descricao-imagem-surdos"
+     class="rounded-lg shadow-xl w-full h-auto">
+<span id="descricao-imagem-surdos" class="sr-only">
+    Imagem ilustrativa para pessoas com deficiência auditiva: Funcionário operando máquina de corte de metal.
+</span>
+<!-- ...existing code... -->
+ <!-- Adicione instruções textuais claras para formulários -->
+<form class="bg-white p-8 rounded-lg shadow-lg" aria-label="Formulário de contato" aria-describedby="instrucao-form-surdos">
+    <span id="instrucao-form-surdos" class="sr-only">
+        Preencha os campos abaixo. Caso não possa falar, utilize o campo mensagem para descrever sua necessidade.
+    </span>
+    <!-- ...existing code... -->
+</form>
+<!-- ...existing code... -->
+ <!-- Adicione área para contato via chat/texto -->
+<div class="mt-8">
+    <h4 class="font-bold text-lg mb-4">ATENDIMENTO ESPECIAL</h4>
+    <p class="text-gray-600 mb-2">
+        Pessoas surdas ou mudas podem entrar em contato pelo WhatsApp ou pelo formulário, descrevendo sua necessidade por texto.
+    </p>
+    <a href="https://wa.me/5511987654321?text=Olá!%20Sou%20surdo%20ou%20mudo%20e%20gostaria%20de%20atendimento%20por%20mensagem." target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition" aria-label="Atendimento especial pelo WhatsApp">
+        Atendimento WhatsApp Texto
+    </a>
+</div>
+<!-- ...existing code... -->
+ <!-- Adicione script para destacar instruções visuais/textuais ao ativar modo surdo/mudo -->
+<script>
+    // ...existing code...
+    document.getElementById('acessibilidade-surdos').addEventListener('click', function() {
+        // Destaca instruções textuais e oculta elementos que dependem de áudio
+        document.querySelectorAll('.sr-only').forEach(el => {
+            el.classList.remove('sr-only');
+            el.classList.add('bg-yellow-100', 'text-blue-900', 'p-2', 'rounded', 'mb-2');
+        });
+        alert('Modo Surdo/Mudo ativado: instruções textuais destacadas.');
+    });
+    // ...existing code...
+</script>
